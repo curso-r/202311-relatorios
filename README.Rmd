@@ -1,8 +1,8 @@
 ---
 output: github_document
 params:
-  turma: 202102-intro-programacao
-  nome_curso: ATUALIZANDO....
+  turma: 202311-relatorios
+  nome_curso: Relatórios e apresentações
   download_material: 'TRUE'
 ---
 
