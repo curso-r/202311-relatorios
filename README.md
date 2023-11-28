@@ -4,7 +4,7 @@
 ## Informações importantes
 
 - [Clique
-  aqui](https://github.com/curso-r/202311-relatorios/archive/refs/heads/main.zip)
+  aqui](https://github.com/curso-r/202311-relatorios/archive/refs/heads/main.zips)
   para baixar o material do curso.
 
 - Nosso blog: <https://curso-r.com/blog/>
@@ -29,8 +29,26 @@ Fora do horário de aula ou monitoria:
 
 ## Slides
 
-| Slide |
-|:------|
+- [01 - Sobre o
+  curso](https://curso-r.github.io/main-relatorios/slides/01-sobre-o-curso.html)
+
+- [02 - Sobre RMarkdown e
+  Quarto](https://curso-r.github.io/main-relatorios/slides/02-sobre-rmd-qmd.html)
+
+- [03 -
+  Intermediário](https://curso-r.github.io/main-relatorios/slides/03-intermediario.html)
+
+- [04 -
+  Customização](https://curso-r.github.io/main-relatorios/slides/04-customizacao.html)
+
+- [05 -
+  Compartilhamento](https://curso-r.github.io/main-relatorios/slides/05-compartilhamento.html)
+
+- [06 -
+  Automatização](https://curso-r.github.io/main-relatorios/slides/06-automatizacao.html)
+
+- [07 -
+  Extensões](https://curso-r.github.io/main-relatorios/slides/07-extensoes.html)
 
 ## Scripts utilizados em aula
 
@@ -44,8 +62,11 @@ Fora do horário de aula ou monitoria:
 
 ## Lição de casa
 
-| Exercício |
-|:----------|
+| Exercício                                                                                     |
+|:----------------------------------------------------------------------------------------------|
+| [01-quarto.R](https://curso-r.github.io/202311-relatorios/exercicios/01-quarto.R)             |
+| [02-customizacao.R](https://curso-r.github.io/202311-relatorios/exercicios/02-customizacao.R) |
+| [03-apresentacao.R](https://curso-r.github.io/202311-relatorios/exercicios/03-apresentacao.R) |
 
 ## Material extra
 
@@ -53,7 +74,13 @@ Referências extras relacionadas com o conteúdos das aulas, ou materiais
 que comentamos quando tiramos dúvidas (não necessariamente são
 relacionadas com o conteúdo da aula).
 
-    #> Em breve!
+| Tema           | Descrição                                                                                                        |
+|:---------------|:-----------------------------------------------------------------------------------------------------------------|
+| Quarto         | [Documentação do Quarto](https://quarto.org/docs/guide/)                                                         |
+| Comunidades    | [Discourse da Curso-R](https://discourse.curso-r.com)                                                            |
+| Trabalho final | [Post com ideias de Bases de dados](https://blog.curso-r.com/posts/2022-06-11-bases-de-dados/)                   |
+| Pré-curso      | [Tutorial de instalação do R, RStudio, Git](https://www.youtube.com/watch?t=2415&v=fiZStofJqMQ&feature=youtu.be) |
+| Quarto         | [Quarto - Link de instalação](https://quarto.org/docs/get-started/)                                              |
 
 ## Redes sociais da Curso-R
 

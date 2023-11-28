@@ -29,7 +29,7 @@ path_to_url <- function(path) {
 ```{r results = 'asis'}
 # Baixar o ZIP do repo da turma (o repo principal não vai ter os scripts feitos em aula)
 if (params$download_material == "TRUE") {
-  glue::glue("- [Clique aqui](https://github.com/curso-r/{params$turma}/archive/refs/heads/main.zip) para baixar o material do curso.")
+  glue::glue("- [Clique aqui](https://github.com/curso-r/202311-relatorios/archive/refs/heads/main.zips) para baixar o material do curso.")
 }
 ```
 
@@ -55,13 +55,19 @@ Fora do horário de aula ou monitoria:
 
 ## Slides
 
-```{r}
-"slides/" |>
-  fs::dir_ls(glob = "*.html", fail = FALSE) |>
-  path_to_url() |>
-  dplyr::select(Slide = url) |>
-  knitr::kable()
-```
+- [01 - Sobre o curso](https://curso-r.github.io/main-relatorios/slides/01-sobre-o-curso.html)
+
+- [02 - Sobre RMarkdown e Quarto](https://curso-r.github.io/main-relatorios/slides/02-sobre-rmd-qmd.html)
+
+- [03 - Intermediário](https://curso-r.github.io/main-relatorios/slides/03-intermediario.html)
+
+- [04 - Customização](https://curso-r.github.io/main-relatorios/slides/04-customizacao.html)
+
+- [05 - Compartilhamento](https://curso-r.github.io/main-relatorios/slides/05-compartilhamento.html)
+
+- [06 - Automatização](https://curso-r.github.io/main-relatorios/slides/06-automatizacao.html)
+
+- [07 - Extensões](https://curso-r.github.io/main-relatorios/slides/07-extensoes.html)
 
 
 ## Scripts utilizados em aula
@@ -102,14 +108,20 @@ conteúdo da aula).
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-arquivo_csv_materiais <- "extras.csv"
-if (file.exists(arquivo_csv_materiais)) {
-  arquivo_csv_materiais |>
-    readr::read_csv2(show_col_types = FALSE) |>
-    knitr::kable()
-} else {
-  cat("Em breve!")
-}
+safe_buscar_materiais_extras <- purrr::possibly(
+  .f = function(){
+    googlesheets4::gs4_deauth()
+    "1Oif55qAuR_yYLt0D2Ri744SAlaFf9SleJfQIIUgB_hA" |>
+      googlesheets4::read_sheet("relatorios") |>
+      dplyr::mutate(link = glue::glue("[{desc}]({url})")) |>
+      dplyr::select(-desc,-url) |>
+      dplyr::filter(aula <= 0) |> 
+      dplyr::arrange(aula) |>
+      dplyr::select(-aula) |> 
+      knitr::kable(col.names = c("Tema", "Descrição")) 
+  }, "Verificar tabela de materiais extras")
+tabela <- safe_buscar_materiais_extras()
+tabela
 ```
 
 ## Redes sociais da Curso-R
@@ -125,24 +137,24 @@ if (file.exists(arquivo_csv_materiais)) {
 - Facebook: https://www.facebook.com/cursodeR
 
 ```{r include = FALSE}
-# Criar arquivo _config.yml
-if (params$download_material == TRUE) {
-  content <- glue::glue(
-    "theme: jekyll-theme-minimal", "\n",
-    "logo: assets/logo.png", "\n",
-    "title: {params$nome_curso}", "\n",
-    "show_downloads: true", "\n",
-    "link_material: 'https://github.com/curso-r/{params$turma}/archive/refs/heads/main.zip'",
-    "\n"
-  )
-} else {
-  content <- glue::glue(
-    "theme: jekyll-theme-minimal", "\n",
-    "logo: assets/logo.png", "\n",
-    "title: {params$nome_curso}", "\n",
-    "show_downloads: false", "\n"
-  )
-}
-
-readr::write_lines(content, "_config.yml")
+# # Criar arquivo _config.yml
+# if (params$download_material == TRUE) {
+#   content <- glue::glue(
+#     "theme: jekyll-theme-minimal", "\n",
+#     "logo: assets/logo.png", "\n",
+#     "title: {params$nome_curso}", "\n",
+#     "show_downloads: true", "\n",
+#     "link_material: 'https://github.com/curso-r/{params$turma}/archive/refs/heads/main.zip'",
+#     "\n"
+#   )
+# } else {
+#   content <- glue::glue(
+#     "theme: jekyll-theme-minimal", "\n",
+#     "logo: assets/logo.png", "\n",
+#     "title: {params$nome_curso}", "\n",
+#     "show_downloads: false", "\n"
+#   )
+# }
+# 
+# readr::write_lines(content, "_config.yml")
 ```
