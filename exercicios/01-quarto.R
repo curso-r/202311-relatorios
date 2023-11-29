@@ -1,6 +1,16 @@
 # Exercício 1:
-# 1. Ler o capítulo 9 do livro:
-# https://livro.curso-r.com/9-relatorios.html
+
+# Leituras:
+
+# Já está em português:
+# - https://cienciadedatos.github.io/pt-r4ds/communicate.html
+
+
+# Ainda é necessário traduzir.
+# Caso você tenha familiridade lendo em inglês,
+# recomendo a leitura:
+# - https://cienciadedatos.github.io/pt-r4ds/quarto.html
+
 
 # Exercício 2:
 # Crie um arquivo .qmd e adicione o conteúdo abaixo.
