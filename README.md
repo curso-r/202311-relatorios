@@ -52,13 +52,10 @@ Fora do horário de aula ou monitoria:
 
 ## Scripts utilizados em aula
 
-| Exemplo |
-|:--------|
-
-## Práticas
-
-| Exemplo |
-|:--------|
+| Exemplo                                                                                                                          |
+|:---------------------------------------------------------------------------------------------------------------------------------|
+| [conhecendo-relatorios-quarto.qmd](https://curso-r.github.io/202311-relatorios/praticas/aula-1/conhecendo-relatorios-quarto.qmd) |
+| [conhecendo-relatorios.Rmd](https://curso-r.github.io/202311-relatorios/praticas/aula-1/conhecendo-relatorios.Rmd)               |
 
 ## Lição de casa
 
@@ -74,13 +71,16 @@ Referências extras relacionadas com o conteúdos das aulas, ou materiais
 que comentamos quando tiramos dúvidas (não necessariamente são
 relacionadas com o conteúdo da aula).
 
-| Tema           | Descrição                                                                                                        |
-|:---------------|:-----------------------------------------------------------------------------------------------------------------|
-| Quarto         | [Documentação do Quarto](https://quarto.org/docs/guide/)                                                         |
-| Comunidades    | [Discourse da Curso-R](https://discourse.curso-r.com)                                                            |
-| Trabalho final | [Post com ideias de Bases de dados](https://blog.curso-r.com/posts/2022-06-11-bases-de-dados/)                   |
-| Pré-curso      | [Tutorial de instalação do R, RStudio, Git](https://www.youtube.com/watch?t=2415&v=fiZStofJqMQ&feature=youtu.be) |
-| Quarto         | [Quarto - Link de instalação](https://quarto.org/docs/get-started/)                                              |
+| Tema           | Descrição                                                                                                                   |
+|:---------------|:----------------------------------------------------------------------------------------------------------------------------|
+| Quarto         | [Documentação do Quarto](https://quarto.org/docs/guide/)                                                                    |
+| Comunidades    | [Discourse da Curso-R](https://discourse.curso-r.com)                                                                       |
+| Trabalho final | [Post com ideias de Bases de dados](https://blog.curso-r.com/posts/2022-06-11-bases-de-dados/)                              |
+| Pré-curso      | [Tutorial de instalação do R, RStudio, Git](https://www.youtube.com/watch?t=2415&v=fiZStofJqMQ&feature=youtu.be)            |
+| RMarkdown      | [Capítulo do livro “Ciência de Dados em R”: Relatórios](https://livro.curso-r.com/9-relatorios.html)                        |
+| Comunidades    | [Newsletter comentada pelo Julio](https://www.linkedin.com/newsletters/explorando-dados-com-r-e-a-bea-7129591797797797888/) |
+| Quarto         | [Galeria do Quarto](https://quarto.org/docs/gallery/)                                                                       |
+| PDF            | [Pagedown - converter html em PDF](https://github.com/rstudio/pagedown)                                                     |
 
 ## Redes sociais da Curso-R
 

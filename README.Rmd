@@ -73,21 +73,13 @@ Fora do horário de aula ou monitoria:
 ## Scripts utilizados em aula
 
 ```{r}
-"exemplos_de_aula/" |>
-  fs::dir_ls(fail = FALSE) |>
-  path_to_url() |>
-  dplyr::select(Exemplo = url) |>
-  knitr::kable()
-```
-## Práticas
-
-```{r}
 "praticas/" |>
-  fs::dir_ls(fail = FALSE) |>
+  fs::dir_ls(fail = FALSE, recurse = TRUE, glob = "*.qmd|*.Rmd") |>
   path_to_url() |>
   dplyr::select(Exemplo = url) |>
   knitr::kable()
 ```
+
 
 ## Lição de casa
 
@@ -102,12 +94,11 @@ Fora do horário de aula ou monitoria:
 
 ## Material extra
 
-Referências extras relacionadas com o conteúdos das aulas, ou materiais que
-comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o
-conteúdo da aula).
+Referências extras relacionadas com o conteúdos das aulas, ou materiais que comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o conteúdo da aula).
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+# https://docs.google.com/spreadsheets/d/1Oif55qAuR_yYLt0D2Ri744SAlaFf9SleJfQIIUgB_hA/edit#gid=612958400
 safe_buscar_materiais_extras <- purrr::possibly(
   .f = function(){
     googlesheets4::gs4_deauth()
@@ -115,7 +106,7 @@ safe_buscar_materiais_extras <- purrr::possibly(
       googlesheets4::read_sheet("relatorios") |>
       dplyr::mutate(link = glue::glue("[{desc}]({url})")) |>
       dplyr::select(-desc,-url) |>
-      dplyr::filter(aula <= 0) |> 
+      dplyr::filter(aula <= 1) |> 
       dplyr::arrange(aula) |>
       dplyr::select(-aula) |> 
       knitr::kable(col.names = c("Tema", "Descrição")) 
