@@ -1,0 +1,88 @@
+---
+title: "Tarefa pós-aula 2"
+---
+
+**Objetivo:** Desenvolver habilidades práticas na criação de relatórios reprodutíveis usando o Quarto (arquivo `.qmd`) e exportar para o formato `.docx` (Word), aplicando os conceitos aprendidos em sala.
+
+**Instruções:**
+
+- Vá anotando suas dúvidas! Você pode perguntar na próxima aula ou no Google Classroom do curso.
+
+- Use esse documento como base para a sua tarefa. Em @sec-pinguins, você encontrará um exemplo de análise de dados com os pinguins de Palmer.
+
+- Configure esse documento .qmd para ser exportado em formato Word.
+
+- Preencha com um pouco de texto para depois facilitar adicionar referências e citações.
+
+- Cite os pacotes usados, e o pacote `{palmerpenguins}` (dados originais).
+
+-  Adicione pelo menos duas referências bibliográficas ao seu relatório. 
+
+
+- Utilize um arquivo .bib para gerenciar suas referências.
+
+- Adicione as opções de chunk necessários.
+
+- Inclua citações no texto e demonstre como fazer referências cruzadas a figuras, tabelas, seções.
+
+- Utilize um arquivo .csl para definir o estilo de citação e referência bibliográfica.
+
+- Verifique se todas as referências, citações e elementos de código estão corretamente formatados no documento Word final.
+
+
+
+## Conhecendo os pinguins em Palmer {#sec-pinguins}
+
+```{r}
+library(tidyverse)
+library(dados)
+library(knitr)
+```
+
+
+
+```{r}
+dados::pinguins
+```
+
+
+
+```{r}
+dados::pinguins |> 
+  ggplot(aes(x = especie, fill = especie)) +
+  geom_bar(show.legend = FALSE) +
+  theme_minimal() +
+  labs(title = "Contagem de pinguins em Palmer, por espécie",
+       caption = "Fonte: Base de dados pinguins, disponível no pacote dados",
+       x = "Espécie",
+       y = "Contagem") +
+  scale_fill_brewer(palette = "Set2")
+```
+
+
+
+
+```{r}
+dados::pinguins |> 
+  ggplot(aes(x = especie, y = comprimento_bico, fill = especie)) +
+  geom_boxplot(show.legend = FALSE) +
+  theme_minimal() +
+  labs(title = "Comprimento do bico dos pinguins em Palmer, por espécie",
+       caption = "Fonte: Base de dados pinguins, disponível no pacote dados",
+       x = "Espécie",
+       y = "Comprimento do bico (mm)") +
+  scale_fill_brewer(palette = "Set2")
+```
+
+
+
+
+```{r}
+dados::pinguins |> 
+  group_by(especie) |> 
+  summarise(media = mean(comprimento_bico, na.rm = TRUE),
+            mediana = median(comprimento_bico, na.rm = TRUE),
+            desvio_padrao = sd(comprimento_bico, na.rm = TRUE),
+            n = n()) |> 
+  kable()
+```
