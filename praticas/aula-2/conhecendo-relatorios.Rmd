@@ -1,0 +1,98 @@
+---
+title: "Experimendo o RMarkdown"
+author: "Beatriz + Turma do curso de relatórios e apresentações"
+date: "2023-11-28"
+# output: html_document
+# output: word_document
+output: pdf_document
+bibliography: references.bib
+---
+
+```{r}
+library(tidyverse)
+# Como evitar que apareça messages e warnings?
+# Tabelas - ok 
+# Gráficos - ok
+# Texto com informação dos dados, pré-visualização
+# Fórmulas - aula que vem :)
+# Título
+# Objetivo
+```
+
+## Introdução
+
+
+```{r}
+especie_mais_frequente <- starwars |> 
+  count(species, sort = TRUE) |> 
+  slice(1)
+
+
+quantidade_de_especies <- starwars |> 
+  distinct(species) |> 
+  drop_na(species) |> 
+  nrow()
+
+# Outra forma:
+quantidade_de_especies_curto <- n_distinct(starwars$species, na.rm = TRUE)
+# `r `
+```
+
+
+Nesta análise, utilizaremos a base de dados `starwars`, que apresenta `r nrow(starwars)` personagens da série Starwars. Nesta série, `r quantidade_de_especies` espécies são apresentadas.
+
+Apesar de se passar no espaço e apresentar vários planetas, a espécie mais frequente é *`r especie_mais_frequente$species`*, com `r especie_mais_frequente$n` personagens na base.
+
+
+
+## Objetivo
+
+O objetivo é fazer um relatório para testar o **RMarkdown**, *experimentando* criar gráficos e tabelas, utilizando a [base de personagens do starwars](https://dplyr.tidyverse.org/reference/starwars.html){target="_blank"}. [@saldanha2019]
+
+
+Gostaríamos de adicionar:
+
+-   Tabelas
+
+-   Gráficos
+
+-   Texto com informação dos dados
+
+-   pré-visualização dos dados
+
+-   fórmula
+
+-   objetivos
+
+-   etc
+
+
+[![Logo do pacote dplyr](imagens/logo.png){width="30%" fig-align="center"}](https://dplyr.tidyverse.org/)
+
+```{r}
+# Descobrir: pq as classes na imagem não estão funcionando?
+# starwars
+```
+
+```{r}
+# Aparecer só o resultado
+# Não aparecer warnings!
+# legenda, tamanho, posicao
+starwars |> 
+  ggplot() +
+  geom_point(aes(x = mass, y = height, color = sex)) 
+```
+
+```{r}
+# Aparecer o resultado
+# legenda
+starwars |> 
+  group_by(species) |> 
+  summarise(
+    quantidade_personagens = n(),
+    media_massa = mean(mass, na.rm = TRUE)
+  ) |> 
+  arrange(desc(quantidade_personagens)) |> 
+  # funções para criar tabelas
+  knitr::kable()
+```
