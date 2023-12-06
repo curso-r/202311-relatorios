@@ -52,18 +52,18 @@ Fora do horário de aula ou monitoria:
 
 ## Scripts utilizados em aula
 
-| Exemplo                                                                                                                          |
-|:---------------------------------------------------------------------------------------------------------------------------------|
-| [conhecendo-relatorios-quarto.qmd](https://curso-r.github.io/202311-relatorios/praticas/aula-1/conhecendo-relatorios-quarto.qmd) |
-| [conhecendo-relatorios.Rmd](https://curso-r.github.io/202311-relatorios/praticas/aula-1/conhecendo-relatorios.Rmd)               |
+| Praticas                                                                         |
+|:---------------------------------------------------------------------------------|
+| [aula-1](https://github.com/curso-r/202311-relatorios/tree/main/praticas/aula-1) |
+| [aula-2](https://github.com/curso-r/202311-relatorios/tree/main/praticas/aula-2) |
 
 ## Lição de casa
 
-| Exercício                                                                                     |
-|:----------------------------------------------------------------------------------------------|
-| [01-quarto.R](https://curso-r.github.io/202311-relatorios/exercicios/01-quarto.R)             |
-| [02-customizacao.R](https://curso-r.github.io/202311-relatorios/exercicios/02-customizacao.R) |
-| [03-apresentacao.R](https://curso-r.github.io/202311-relatorios/exercicios/03-apresentacao.R) |
+| Exercício                                                                                                |
+|:---------------------------------------------------------------------------------------------------------|
+| [01-quarto.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/01-quarto.R)             |
+| [03-customizacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/03-customizacao.R) |
+| [04-apresentacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/04-apresentacao.R) |
 
 ## Material extra
 
