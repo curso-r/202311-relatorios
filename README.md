@@ -59,11 +59,12 @@ Fora do horário de aula ou monitoria:
 
 ## Lição de casa
 
-| Exercício                                                                                                |
-|:---------------------------------------------------------------------------------------------------------|
-| [01-quarto.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/01-quarto.R)             |
-| [03-customizacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/03-customizacao.R) |
-| [04-apresentacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/04-apresentacao.R) |
+| Exercício                                                                                                  |
+|:-----------------------------------------------------------------------------------------------------------|
+| [01-quarto.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/01-quarto.R)               |
+| [02-quarto-word.qmd](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/02-quarto-word.qmd) |
+| [03-customizacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/03-customizacao.R)   |
+| [04-apresentacao.R](https://github.com/curso-r/202311-relatorios/tree/main/exercicios/04-apresentacao.R)   |
 
 ## Material extra
 
