@@ -1,0 +1,87 @@
+---
+title: "HTML customizado"
+format: 
+  html:
+    toc: true
+lang: pt
+crossref:
+  chapters: true
+---
+
+# Capítulo muito legal
+
+```{css}
+
+h2 {
+  color: #5e00ff;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.meuechart {
+  width: 50%;
+  margin: auto;
+}
+
+```
+
+No @sec-capitulo-chato, temos a conclusão.
+
+No [Capítulo da minha conclusão @sec-capitulo-chato], temos a conclusão
+
+## Segunda seção {#sec-segunda-secao}
+
+Se você olhar o gráfico de @fig-grafico, verá que é muito legal.
+
+```{r}
+#| label: fig-grafico
+#| fig-cap: "Gráfico de exemplo"
+plot(cars)
+```
+
+
+## Terceira seção
+
+Se você olhar a tabela de @tbl-tabela, verá que não é tão legal. Isso é parecido com o que vimos na @sec-segunda-secao.
+
+```{r}
+#| label: tbl-tabela
+#| tbl-cap: "Tabela de exemplo"
+knitr::kable(head(iris))
+```
+
+# Capítulo muito chato {#sec-capitulo-chato}
+
+## Conclusão
+
+Concluindo, temos que: 
+
+- Pela figura um: isso é muito legal
+- Pela figura dois: isso não é tão legal
+
+## Problema do echarts
+
+-   DÚVIDA: Pq o out-width e fig-width não funcionam com echarts?
+
+
+::: {.meuechart}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(echarts4r)
+library(dplyr)
+starwars |> 
+  e_charts() |> 
+  e_boxplot(height)
+```
+
+:::
+
+## Referências

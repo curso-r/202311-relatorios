@@ -1,0 +1,44 @@
+---
+title: "Meu arquivo Word!!!"
+format: 
+  docx:
+    reference-doc: template-abj.docx
+    toc: true
+lang: pt
+---
+
+# Capítulo de introdução
+
+## Minha super Introdução!
+
+Muito legal
+
+## Segunda seção {#sec-segunda-secao}
+
+Se você olhar o gráfico de @fig-grafico, verá que é muito legal.
+
+```{r}
+#| label: fig-grafico
+#| fig-cap: "Gráfico de exemplo"
+plot(cars)
+```
+
+
+## Terceira seção
+
+Se você olhar a tabela de @tbl-tabela, verá que não é tão legal. Isso é parecido com o que vimos na @sec-segunda-secao.
+
+```{r}
+#| label: tbl-tabela
+#| tbl-cap: "Tabela de exemplo"
+knitr::kable(head(iris))
+```
+
+## Conclusão
+
+Concluindo, temos que: 
+
+- Pela figura um: isso é muito legal
+- Pela figura dois: isso não é tão legal
+
+## Referências
