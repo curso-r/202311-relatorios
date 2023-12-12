@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+
+$body-bg: #dadbdb;
+$body-color: #000000;
+$link-color: #bf06cf;
+$presentation-heading-color: #063f78;
+$presentation-heading-font: 'Montserrat', sans-serif;
+
+/*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+
+.reveal .slide-menu-button{
+  color: $presentation-heading-color !important;
+}

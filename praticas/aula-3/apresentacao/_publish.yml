@@ -1,0 +1,4 @@
+- source: index.qmd
+  quarto-pub:
+    - id: 67477328-5934-4722-bbca-e5dd3de669e9
+      url: 'https://beamilz.quarto.pub/aula-3-quarto'
