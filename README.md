@@ -56,6 +56,7 @@ Fora do horário de aula ou monitoria:
 |:---------------------------------------------------------------------------------|
 | [aula-1](https://github.com/curso-r/202311-relatorios/tree/main/praticas/aula-1) |
 | [aula-2](https://github.com/curso-r/202311-relatorios/tree/main/praticas/aula-2) |
+| [aula-3](https://github.com/curso-r/202311-relatorios/tree/main/praticas/aula-3) |
 
 ## Lição de casa
 
