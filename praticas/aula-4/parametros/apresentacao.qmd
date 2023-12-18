@@ -1,0 +1,79 @@
+---
+title: "Barragens de mineração"
+format: revealjs
+editor: visual
+---
+
+```{r}
+filtro_uf <- "MG"
+```
+
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+# Obteção dos dados ---------
+# Download dos dados de barragens de mineração no Brasil
+# https://app.anm.gov.br/SIGBM/Publico/ClassificacaoNacionalDaBarragem
+
+# Conseguimos “imitar” o processo de baixar o arquivo usando programação.
+
+# Salvando o link em um objeto
+link_sigbm <-
+  "https://app.anm.gov.br/SIGBM/Publico/ClassificacaoNacionalDaBarragem/ExportarExcel"
+
+
+caminho_sigbm <- here::here("praticas", "aula-4", "parametros", "dados", "sigbm.xlsx")
+```
+
+```{r}
+#| eval: FALSE
+# Fazendo uma requisição POST neste link,
+# e salvando o arquivo localmente
+httr::POST(
+  link_sigbm,
+  httr::write_disk(caminho_sigbm, overwrite = TRUE)
+)
+```
+
+```{r}
+# Importação dos dados ------------
+
+# Importar dados, pulando 4 linhas iniciais
+sigbm_bruto <- readxl::read_excel(caminho_sigbm, skip = 4) |> 
+  janitor::clean_names()
+```
+
+
+```{r}
+barragens_filtradas <- sigbm_bruto |> 
+  filter(uf == filtro_uf)
+```
+
+O estado de `r filtro_uf`, conta com `r nrow(barragens_filtradas)` barragens cadastradas no sistema SIGBM.
+
+## Empreendedores
+
+```{r}
+barragens_filtradas |> 
+  count(nome_do_empreendedor, sort = TRUE) |> 
+  slice_head(n = 5) |> 
+  knitr::kable()
+```
+
+
+## Dano potencial associado
+
+
+```{r}
+#| label: dpa
+barragens_filtradas |> 
+  count(dano_potencial_associado) |> 
+  ggplot() + 
+  aes(x = n, y = dano_potencial_associado) +
+  geom_col() +
+  theme_light()
+```
+
+
