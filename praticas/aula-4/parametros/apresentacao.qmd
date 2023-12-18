@@ -1,13 +1,12 @@
 ---
-title: "Barragens de mineração"
+title: "Barragens de mineração em `r params$uf`"
 format: revealjs
 editor: visual
+params: 
+  uf: "MG"
 ---
 
-```{r}
-filtro_uf <- "MG"
-```
-
+## Barragens de mineração em `r params$uf`
 
 ```{r}
 #| message: false
@@ -48,12 +47,14 @@ sigbm_bruto <- readxl::read_excel(caminho_sigbm, skip = 4) |>
 
 ```{r}
 barragens_filtradas <- sigbm_bruto |> 
-  filter(uf == filtro_uf)
+  filter(uf == params$uf)
 ```
 
-O estado de `r filtro_uf`, conta com `r nrow(barragens_filtradas)` barragens cadastradas no sistema SIGBM.
 
-## Empreendedores
+
+O estado de `r params$uf`, conta com `r nrow(barragens_filtradas)` barragens cadastradas no sistema SIGBM.
+
+## Principais empreendedores
 
 ```{r}
 barragens_filtradas |> 
