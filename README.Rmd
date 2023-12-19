@@ -106,7 +106,7 @@ safe_buscar_materiais_extras <- purrr::possibly(
       googlesheets4::read_sheet("relatorios") |>
       dplyr::mutate(link = glue::glue("[{desc}]({url})")) |>
       dplyr::select(-desc,-url) |>
-      dplyr::filter(aula <= 1) |> 
+      dplyr::filter(aula <= 5) |> 
       dplyr::arrange(aula) |>
       dplyr::select(-aula) |> 
       knitr::kable(col.names = c("Tema", "Descrição")) 
