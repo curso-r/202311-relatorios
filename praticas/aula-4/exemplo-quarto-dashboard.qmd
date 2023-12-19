@@ -1,0 +1,138 @@
+---
+title: "Dashboard"
+author: "Curso-R"
+format: dashboard
+server: shiny
+---
+
+```{r}
+#| context: setup
+
+# duvida:  precisa ter context: setup?
+
+
+library(tidyverse)
+library(dados)
+```
+
+# {.sidebar}
+
+```{r}
+sliderInput(
+  inputId = "altura_max",
+  label = "Altura máxima",
+  min = 0, max = max(dados_starwars$altura, na.rm = TRUE),
+  value = 200
+)
+```
+
+
+# Página 1
+
+## Row {height=20%}
+
+```{r}
+#| content: valuebox
+#| title: Altura média
+#| icon: rulers
+
+dados_starwars |> 
+  pull(altura) |> 
+  mean(na.rm = TRUE) |> 
+  round(2)
+
+```
+
+```{r}
+#| content: valuebox
+#| title: Massa média
+#| icon: stack
+
+dados_starwars |> 
+  pull(massa) |> 
+  mean(na.rm = TRUE) |> 
+  round(2)
+
+```
+
+```{r}
+#| content: valuebox
+#| title: Observações
+#| icon: person
+
+dados_starwars |> 
+  nrow()
+
+```
+
+
+## Row {height=40%}
+
+```{r}
+#| title: dispersão
+plotOutput("grafico")
+```
+
+
+```{r}
+#| context: server
+output$grafico <- renderPlot({
+  dados_starwars |> 
+    filter(altura < input$altura_max) |> 
+    ggplot(aes(x = altura, y = massa)) +
+    geom_point()
+})
+
+```
+
+
+## Row {height=40%}
+
+```{r}
+#| title: histograma da altura
+dados_starwars |> 
+  ggplot(aes(x = altura)) +
+  geom_histogram()
+
+```
+
+
+```{r}
+#| title: histograma da massa
+dados_starwars |> 
+  ggplot(aes(x = massa)) +
+  geom_histogram()
+
+```
+
+# Página 2 {scrolling="true"}
+
+## Row {height=60%}
+
+```{r}
+
+dados_starwars |> 
+  ggplot(aes(x = altura, y = massa)) +
+  geom_point()
+
+```
+
+
+## Row {height=40%}
+
+```{r}
+
+dados_starwars |> 
+  ggplot(aes(x = altura)) +
+  geom_histogram()
+
+```
+
+
+```{r}
+
+dados_starwars |> 
+  ggplot(aes(x = massa)) +
+  geom_histogram()
+
+```

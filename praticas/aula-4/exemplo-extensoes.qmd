@@ -1,0 +1,16 @@
+---
+title: "Untitled"
+format: html
+filters:
+   - lightbox
+lightbox: auto
+engine: jupyter
+---
+
+
+```{python}
+
+import pandas as pd
+print(1+1)
+
+```

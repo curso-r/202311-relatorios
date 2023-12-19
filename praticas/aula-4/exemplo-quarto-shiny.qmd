@@ -1,0 +1,74 @@
+---
+title: "Exemplo com shiny"
+format: html
+server: shiny
+---
+
+```{r}
+#| context: setup
+
+library(tidyverse)
+library(dados)
+library(shiny)
+
+
+dados_starwars
+
+```
+
+```{r}
+#| panel: input
+#| layout-ncol: 3
+
+sliderInput(
+  inputId = "altura_maxima",
+  label = "Altura máxima",
+  min = 0,
+  max = max(dados_starwars$altura, na.rm = TRUE),
+  value = 200
+)
+
+sliderInput(
+  inputId = "bins",
+  label = "Quantidade de bins",
+  min = 2,
+  max = 40,
+  value = 30
+)
+
+
+
+```
+
+
+```{r}
+#| panel: center
+
+plotOutput("grafico")
+
+```
+
+
+
+
+objetos que vamos trabalhar:
+
+- input
+- output
+
+eles são como se fossem listas, de onde conseguimos acessar os elementos desejados
+
+```{r}
+#| context: server
+
+output$grafico <- renderPlot({
+  
+  dados_starwars |> 
+    filter(altura < input$altura_maxima) |> 
+    ggplot(aes(x = altura)) +
+    geom_histogram(bins = input$bins)  
+  
+})
+
+```
+
